@@ -6,7 +6,7 @@
     app:startDestination="@id/homeFragment">
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.lucassimao.cabojosiasinforma.home.presentation.HomeFragment"
+        android:name="com.lucassimao.cabojosiasinforma.home.presentation.ui.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/home_fragment" >
         <action
@@ -39,7 +39,7 @@
         tools:layout="@layout/meeting_fragment" />
     <fragment
         android:id="@+id/notificationsFragment"
-        android:name="com.lucassimao.cabojosiasinforma.notifications.NotificationsFragment"
+        android:name="com.lucassimao.cabojosiasinforma.problem_notifications.presentation.ui.ProblemNotificationFragment"
         android:label="notifications_fragment"
-        tools:layout="@layout/notifications_fragment" />
+        tools:layout="@layout/problem_notifications_fragment" />
 </navigation>
