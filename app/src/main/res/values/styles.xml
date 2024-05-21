@@ -10,4 +10,27 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:gravity">center</item>
     </style>
+
+    <style name="ProblemDescriptionText">
+        <item name="android:layout_margin">@dimen/default_margin</item>
+        <item name="android:textSize">@dimen/large_text_size</item>
+    </style>
+
+    <style name="ProblemEditText">
+        <item name="android:background">@drawable/edittext_border</item>
+        <item name="android:padding">@dimen/default_padding</item>
+        <item name="android:layout_margin">@dimen/default_margin</item>
+        <item name="android:textColorHint">@color/black</item>
+    </style>
+
+    <style name="ProblemButton">
+        <item name="android:drawableTop">@drawable/ic_camera</item>
+        <item name="android:layout_margin">@dimen/default_margin</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
+        <item name="android:background">@drawable/button_square_background</item>
+    </style>
+
+    <style name="SendButton">
+        <item name="android:background">@color/on_tertiary</item>
+    </style>
 </resources>

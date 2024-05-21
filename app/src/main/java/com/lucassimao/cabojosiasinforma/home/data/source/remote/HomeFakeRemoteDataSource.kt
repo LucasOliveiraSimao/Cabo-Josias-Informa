@@ -1,28 +1,30 @@
-package com.lucassimao.cabojosiasinforma.home.data.source
+package com.lucassimao.cabojosiasinforma.home.data.source.remote
 
 import com.lucassimao.cabojosiasinforma.R
 import com.lucassimao.cabojosiasinforma.core.Screens
+import com.lucassimao.cabojosiasinforma.home.data.model.HomeDataModel
+import com.lucassimao.cabojosiasinforma.home.data.source.HomeDataSource
 import javax.inject.Inject
 
 class HomeFakeRemoteDataSource @Inject constructor() : HomeDataSource {
-    override fun fetchCards(): List<HomeCardModel> {
+    override fun fetchCards(): List<HomeDataModel> {
         return listOf(
-            HomeCardModel(
+            HomeDataModel(
                 icon = R.drawable.ic_person,
                 title = "Biografia",
                 type = Screens.BIOGRAPHY
             ),
-            HomeCardModel(
+            HomeDataModel(
                 icon = R.drawable.ic_projects,
                 title = "Projetos",
                 type = Screens.PROJECTS
             ),
-            HomeCardModel(
+            HomeDataModel(
                 icon = R.drawable.ic_calendar,
                 title = "Agendamento de Reunião",
                 type = Screens.MEETING
             ),
-            HomeCardModel(
+            HomeDataModel(
                 icon = R.drawable.ic_notifications,
                 title = "Notificações de Problemas",
                 type = Screens.NOTIFICATIONS
