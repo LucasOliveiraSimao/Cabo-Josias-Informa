@@ -93,6 +93,7 @@ obj/
 .idea/navEditor.xml
 .idea/deploymentTargetDropDown.xml
 .idea/deploymentTargetSelector.xml
+.idea/render.experimental.xml
 
 
 # OS-specific files

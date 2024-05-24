@@ -8,7 +8,7 @@
         android:id="@+id/homeFragment"
         android:name="com.lucassimao.cabojosiasinforma.home.presentation.ui.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/home_fragment" >
+        tools:layout="@layout/home_fragment">
         <action
             android:id="@+id/action_homeFragment_to_biographyFragment"
             app:destination="@id/biographyFragment" />
@@ -29,9 +29,16 @@
         tools:layout="@layout/biography_fragment" />
     <fragment
         android:id="@+id/projectsFragment"
-        android:name="com.lucassimao.cabojosiasinforma.projects.ProjectsFragment"
+        android:name="com.lucassimao.cabojosiasinforma.project_list.presentation.ui.project_list.ProjectListFragment"
         android:label="projects_fragment"
-        tools:layout="@layout/projects_fragment" />
+        tools:layout="@layout/project_list_fragment">
+        <action
+            android:id="@+id/action_projectsFragment_to_projectDetailsFragment"
+            app:destination="@id/projectDetailsFragment" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
     <fragment
         android:id="@+id/meetingFragment"
         android:name="com.lucassimao.cabojosiasinforma.meeting.MeetingFragment"
@@ -42,4 +49,9 @@
         android:name="com.lucassimao.cabojosiasinforma.problem_notifications.presentation.ui.ProblemNotificationFragment"
         android:label="notifications_fragment"
         tools:layout="@layout/problem_notifications_fragment" />
+    <fragment
+        android:id="@+id/projectDetailsFragment"
+        android:name="com.lucassimao.cabojosiasinforma.project_list.presentation.ui.project_detail.ProjectDetailsFragment"
+        android:label="project_details_fragment"
+        tools:layout="@layout/project_details_fragment" />
 </navigation>
