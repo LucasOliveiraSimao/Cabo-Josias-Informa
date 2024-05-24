@@ -33,4 +33,16 @@
     <style name="SendButton">
         <item name="android:background">@color/on_tertiary</item>
     </style>
+
+    <style name="ProjectTitleText">
+        <item name="android:textSize">@dimen/text_size_title_project_details</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_margin">@dimen/default_margin_project_details</item>
+    </style>
+
+    <style name="ProjectDescriptionText">
+        <item name="android:textSize">@dimen/text_size_description_project_details</item>
+        <item name="android:layout_margin">@dimen/default_margin_project_details</item>
+    </style>
 </resources>
