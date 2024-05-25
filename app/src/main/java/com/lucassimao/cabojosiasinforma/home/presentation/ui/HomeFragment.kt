@@ -43,7 +43,7 @@ class HomeFragment : Fragment() {
         val navigationActions = mapOf(
             Screens.BIOGRAPHY to R.id.action_homeFragment_to_biographyFragment,
             Screens.PROJECTS to R.id.action_homeFragment_to_projectsFragment,
-            Screens.NOTIFICATIONS to R.id.action_homeFragment_to_notificationsFragment,
+//            Screens.NOTIFICATIONS to R.id.action_homeFragment_to_notificationsFragment,
             Screens.MEETING to R.id.action_homeFragment_to_meetingFragment
         )
 

@@ -21,14 +21,14 @@ class HomeFakeRemoteDataSource @Inject constructor() : HomeDataSource {
             ),
             HomeDataModel(
                 icon = R.drawable.ic_calendar,
-                title = "Agendamento de Reunião",
+                title = "Agenda de Eventos e Reunião",
                 type = Screens.MEETING
             ),
-            HomeDataModel(
-                icon = R.drawable.ic_notifications,
-                title = "Notificações de Problemas",
-                type = Screens.NOTIFICATIONS
-            )
+//            HomeDataModel(
+//                icon = R.drawable.ic_notifications,
+//                title = "Notificações de Problemas",
+//                type = Screens.NOTIFICATIONS
+//            )
         )
     }
 
