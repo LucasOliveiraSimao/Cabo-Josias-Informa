@@ -17,8 +17,6 @@ lifecycle = "2.8.0"
 
 hilt = "2.51.1"
 
-androidImageCropper = "2.8.0"
-
 picasso = "2.8"
 
 [libraries]
@@ -39,8 +37,6 @@ liveData = { module = "androidx.lifecycle:lifecycle-livedata", version.ref = "li
 
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
-
-android-image-cropper = { module = "com.theartofdev.edmodo:android-image-cropper", version.ref = "androidImageCropper" }
 
 picasso = { module = "com.squareup.picasso:picasso", version.ref = "picasso" }
 
