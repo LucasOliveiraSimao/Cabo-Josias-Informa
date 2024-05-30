@@ -53,7 +53,7 @@ jobs:
     needs: lint
     steps:
       - name: Cache Gradle dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: ~/.gradle/caches
           key: ${{ runner.os }}-gradle-unit-test-${{ hashFiles('**/*.gradle*') }}
@@ -62,6 +62,9 @@ jobs:
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
 
       - name: Run unit tests
         run: ./gradlew test
