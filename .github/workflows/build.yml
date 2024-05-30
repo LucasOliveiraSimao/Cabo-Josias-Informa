@@ -24,17 +24,6 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Cache Android SDK
-        uses: actions/cache@v2
-        with:
-          path: /usr/local/lib/android/sdk
-          key: ${{ runner.os }}-android-sdk-${{ hashFiles('**/build.gradle') }}
-          restore-keys: |
-            $${{ runner.os }}-android-sdk-
-        env:
-          ANDROID_HOME: /usr/local/lib/android/sdk
-          ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
-
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
@@ -71,16 +60,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-unit-test-
 
-      - name: Cache Android SDK
-        uses: actions/cache@v2
-        with:
-          path: /usr/local/lib/android/sdk
-          key: ${{ runner.os }}-android-sdk-${{ hashFiles('**/build.gradle') }}
-          restore-keys: |
-            $${{ runner.os }}-android-sdk-
-        env:
-          ANDROID_HOME: /usr/local/lib/android/sdk
-          ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
 
       - name: Run unit tests
         run: ./gradlew test
