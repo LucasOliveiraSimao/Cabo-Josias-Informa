@@ -24,7 +24,7 @@
     </fragment>
     <fragment
         android:id="@+id/biographyFragment"
-        android:name="com.lucassimao.cabojosiasinforma.biography.BiographyFragment"
+        android:name="com.lucassimao.cabojosiasinforma.biography.presentation.ui.BiographyFragment"
         android:label="biography_fragment"
         tools:layout="@layout/biography_fragment" />
     <fragment

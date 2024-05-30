@@ -1,0 +1,33 @@
+package com.lucassimao.cabojosiasinforma.biography.presentation.ui
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import com.lucassimao.cabojosiasinforma.biography.presentation.view_model.BiographyViewModel
+import com.lucassimao.cabojosiasinforma.databinding.BiographyFragmentBinding
+import dagger.hilt.android.AndroidEntryPoint
+
+@AndroidEntryPoint
+class BiographyFragment : Fragment() {
+    private lateinit var binding: BiographyFragmentBinding
+
+    private val viewModel: BiographyViewModel by viewModels()
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        binding = BiographyFragmentBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.biographyDescription.text = viewModel.fetchBiography().first().description
+    }
+
+}
