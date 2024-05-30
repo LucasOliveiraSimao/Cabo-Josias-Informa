@@ -71,6 +71,17 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-unit-test-
 
+      - name: Cache Android SDK
+        uses: actions/cache@v2
+        with:
+          path: /usr/local/lib/android/sdk
+          key: ${{ runner.os }}-android-sdk-${{ hashFiles('**/build.gradle') }}
+          restore-keys: |
+            $${{ runner.os }}-android-sdk-
+        env:
+          ANDROID_HOME: /usr/local/lib/android/sdk
+          ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+
       - name: Run unit tests
         run: ./gradlew test
 
