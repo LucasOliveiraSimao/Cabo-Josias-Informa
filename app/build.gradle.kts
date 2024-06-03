@@ -58,8 +58,6 @@ dependencies {
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
 
-    implementation(libs.android.image.cropper)
-
     implementation(libs.picasso)
 
     testImplementation(libs.junit)

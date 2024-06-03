@@ -18,9 +18,6 @@
         <action
             android:id="@+id/action_homeFragment_to_meetingFragment"
             app:destination="@id/meetingFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_notificationsFragment"
-            app:destination="@id/notificationsFragment" />
     </fragment>
     <fragment
         android:id="@+id/biographyFragment"
@@ -44,11 +41,6 @@
         android:name="com.lucassimao.cabojosiasinforma.meeting.presentation.ui.MeetingFragment"
         android:label="meeting_fragment"
         tools:layout="@layout/meeting_fragment" />
-    <fragment
-        android:id="@+id/notificationsFragment"
-        android:name="com.lucassimao.cabojosiasinforma.problem_notifications.presentation.ui.ProblemNotificationFragment"
-        android:label="notifications_fragment"
-        tools:layout="@layout/problem_notifications_fragment" />
     <fragment
         android:id="@+id/projectDetailsFragment"
         android:name="com.lucassimao.cabojosiasinforma.project_list.presentation.ui.project_detail.ProjectDetailsFragment"
