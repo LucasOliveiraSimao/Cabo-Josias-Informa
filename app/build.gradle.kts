@@ -3,6 +3,8 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.hilt)
     alias(libs.plugins.kapt)
+    alias(libs.plugins.googleGmsGoogleServices)
+    alias(libs.plugins.googleFirebaseCrashlytics)
 }
 
 android {
@@ -57,6 +59,13 @@ dependencies {
 
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
+
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.crashlytics)
+    implementation(libs.firebase.database)
+    implementation(libs.firebase.storage)
+    implementation(libs.firebase.analytics)
+    implementation(libs.firebase.messaging)
 
     implementation(libs.picasso)
 
