@@ -1,7 +1,7 @@
 package com.lucassimao.cabojosiasinforma.home.data.source.remote
 
 import com.lucassimao.cabojosiasinforma.R
-import com.lucassimao.cabojosiasinforma.core.Screens
+import com.lucassimao.cabojosiasinforma.core.ui.Screens
 import com.lucassimao.cabojosiasinforma.home.data.model.HomeDataModel
 import com.lucassimao.cabojosiasinforma.home.data.source.HomeDataSource
 import javax.inject.Inject
