@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.lucassimao.cabojosiasinforma.R
-import com.lucassimao.cabojosiasinforma.core.Screens
+import com.lucassimao.cabojosiasinforma.core.ui.Screens
 import com.lucassimao.cabojosiasinforma.databinding.HomeFragmentBinding
 import com.lucassimao.cabojosiasinforma.home.presentation.view_model.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint

@@ -28,17 +28,29 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/project_details_title"
-            tools:text="Introdução:
-A preparação para o vestibular é uma etapa crucial na vida de muitos estudantes, mas nem todos têm acesso a recursos e orientação adequados para enfrentar esse desafio. Nesta proposta, sugerimos a criação de um projeto de Aulões Solidários em parceria com a Universidade Federal do Amazonas (UFAM), com o objetivo de oferecer aulas preparatórias gratuitas para vestibulandos de baixa renda na região. Essa iniciativa visa reduzir as desigualdades de acesso à educação e aumentar as chances de sucesso dos participantes nos processos seletivos.
+            tools:text="A preparação para o vertibular" />
 
-Estrutura do Projeto:
-Os Aulões Solidários serão realizados em locais de fácil acesso para os participantes, como escolas públicas, centros comunitários ou instalações da UFAM.
-As aulas serão ministradas por estudantes universitários destacados.
-Será oferecido um cronograma de aulas, abordando as disciplinas cobradas nos vestibulares, como Matemática, Português, Biologia, Química, Física.
-Divulgação e Inscrição:
-A divulgação do projeto será feita por meio de parcerias com escolas públicas, organizações da sociedade civil e mídias sociais.
-Os interessados em participar dos Aulões Solidários poderão se inscrever gratuitamente por meio de um formulário online.
-Serão priorizados estudantes de baixa renda, provenientes de escolas públicas e que estejam cursando o último ano do ensino médio ou que já o tenham concluído." />
+        <TextView
+            android:id="@+id/project_details_objectives"
+            style="@style/ProjectDescriptionText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/project_details_description"
+            tools:text="A preparação para o vertibular" />
+
+        <TextView
+            android:id="@+id/project_details_actions"
+            style="@style/ProjectDescriptionText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/project_details_objectives"
+            tools:text="A preparação para o vertibular" />
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

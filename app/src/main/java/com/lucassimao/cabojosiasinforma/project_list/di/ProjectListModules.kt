@@ -1,12 +1,12 @@
 package com.lucassimao.cabojosiasinforma.project_list.di
 
-import com.lucassimao.cabojosiasinforma.project_list.domain.repository.ProjectListRepository
-import com.lucassimao.cabojosiasinforma.project_list.domain.use_case.ProjectListUseCase
-import com.lucassimao.cabojosiasinforma.project_list.presentation.ui.project_list.ProjectListAdapter
-import com.lucassimao.cabojosiasinforma.project.presentation.view_model.ProjectListViewModel
+import com.google.firebase.database.DatabaseReference
 import com.lucassimao.cabojosiasinforma.project_list.data.ProjectListRepositoryImpl
 import com.lucassimao.cabojosiasinforma.project_list.data.source.ProjectListDataSource
-import com.lucassimao.cabojosiasinforma.project_list.data.source.remote.ProjectListFakeRemoteListDataSource
+import com.lucassimao.cabojosiasinforma.project_list.data.source.remote.ProjectListRealtimeDatabase
+import com.lucassimao.cabojosiasinforma.project_list.domain.repository.ProjectListRepository
+import com.lucassimao.cabojosiasinforma.project_list.domain.use_case.ProjectListUseCase
+import com.lucassimao.cabojosiasinforma.project_list.presentation.view_model.ProjectListViewModel
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,7 +16,8 @@ import dagger.hilt.components.SingletonComponent
 @InstallIn(SingletonComponent::class)
 object ProjectListModules {
     @Provides
-    fun provideProjectDataSource(): ProjectListDataSource = ProjectListFakeRemoteListDataSource()
+    fun provideProjectDataSource(databaseReference: DatabaseReference): ProjectListDataSource =
+        ProjectListRealtimeDatabase(databaseReference)
 
     @Provides
     fun provideProjectRepository(dataSource: ProjectListDataSource): ProjectListRepository =
@@ -29,7 +30,4 @@ object ProjectListModules {
     @Provides
     fun provideProjectViewModel(useCase: ProjectListUseCase): ProjectListViewModel =
         ProjectListViewModel(useCase)
-
-    @Provides
-    fun provideProjectListAdapter(): ProjectListAdapter = ProjectListAdapter()
 }

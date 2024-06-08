@@ -1,7 +1,5 @@
 package com.lucassimao.cabojosiasinforma.meeting.presentation.model
 
-import com.lucassimao.cabojosiasinforma.core.Screens
-
 data class MeetingUiModel(
     val title: String,
     val date: String,

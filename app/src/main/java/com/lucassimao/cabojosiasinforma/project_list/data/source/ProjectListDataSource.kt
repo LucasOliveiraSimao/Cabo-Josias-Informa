@@ -1,9 +1,9 @@
 package com.lucassimao.cabojosiasinforma.project_list.data.source
 
-import com.lucassimao.cabojosiasinforma.project_list.data.model.ProjectDetailsDataModel
-import com.lucassimao.cabojosiasinforma.project_list.data.model.ProjectListDataModel
+import com.lucassimao.cabojosiasinforma.project_list.data.source.remote.callback.ProjectCallback
+import com.lucassimao.cabojosiasinforma.project_list.data.source.remote.callback.ProjectListCallback
 
 interface ProjectListDataSource {
-    fun fetchProjectList(): List<ProjectListDataModel>
-    fun getProjectDetails(id: Int): ProjectDetailsDataModel
+    fun fetchProjectList(callback: ProjectListCallback)
+    fun getProjectDetails(id: Int, callback: ProjectCallback)
 }
