@@ -94,7 +94,7 @@ jobs:
   package:
     name: Generate Android App Bundle
     runs-on: ubuntu-latest
-    needs: [unit-test]
+    needs: [lint]
     steps:
       - name: Checkout the code
         uses: actions/checkout@v4.1.1
