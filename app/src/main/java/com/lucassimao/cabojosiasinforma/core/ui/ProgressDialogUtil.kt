@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package com.lucassimao.cabojosiasinforma.core.ui
 
 import android.app.ProgressDialog
@@ -13,6 +15,6 @@ fun Fragment.showProgressDialog() {
     progressDialog?.show()
 }
 
-fun Fragment.dismissProgressDialog() {
+fun dismissProgressDialog() {
     progressDialog?.dismiss()
 }
