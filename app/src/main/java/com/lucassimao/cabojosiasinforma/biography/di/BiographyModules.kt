@@ -1,8 +1,9 @@
 package com.lucassimao.cabojosiasinforma.biography.di
 
+import com.google.firebase.database.DatabaseReference
 import com.lucassimao.cabojosiasinforma.biography.data.BiographyRepositoryImpl
 import com.lucassimao.cabojosiasinforma.biography.data.source.BiographyDataSource
-import com.lucassimao.cabojosiasinforma.biography.data.source.remote.BiographyFakeRemoteDataSource
+import com.lucassimao.cabojosiasinforma.biography.data.source.remote.BiographyRealtimeDatabase
 import com.lucassimao.cabojosiasinforma.biography.domain.repository.BiographyRepository
 import com.lucassimao.cabojosiasinforma.biography.domain.use_case.BiographyUseCase
 import com.lucassimao.cabojosiasinforma.biography.presentation.view_model.BiographyViewModel
@@ -15,7 +16,8 @@ import dagger.hilt.components.SingletonComponent
 @InstallIn(SingletonComponent::class)
 object BiographyModules {
     @Provides
-    fun provideBiographyDataSource(): BiographyDataSource = BiographyFakeRemoteDataSource()
+    fun provideBiographyDataSource(databaseReference: DatabaseReference): BiographyDataSource =
+        BiographyRealtimeDatabase(databaseReference)
 
     @Provides
     fun provideBiographyRepository(dataSource: BiographyDataSource): BiographyRepository =

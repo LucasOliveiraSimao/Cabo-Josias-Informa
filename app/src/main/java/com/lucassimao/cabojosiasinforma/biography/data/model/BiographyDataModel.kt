@@ -1,5 +1,9 @@
 package com.lucassimao.cabojosiasinforma.biography.data.model
 
 data class BiographyDataModel(
-    val description: String
-)
+    val title: String = "",
+    val description: String = "",
+    val urlImg: String = ""
+) {
+    constructor() : this("", "", "")
+}
