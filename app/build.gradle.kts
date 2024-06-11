@@ -102,8 +102,6 @@ dependencies {
     implementation(libs.firebase.analytics)
     implementation(libs.firebase.messaging)
 
-    implementation (libs.conscrypt.conscrypt.android)
-
     implementation(libs.picasso)
 
     testImplementation(libs.junit)
