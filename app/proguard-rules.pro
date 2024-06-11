@@ -19,3 +19,15 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+# Manter classes do Conscrypt
+-keep class org.conscrypt.** { *; }
+
+# Manter classes do OkHttp relacionadas ao Conscrypt
+-keep class okhttp3.internal.platform.ConscryptPlatform { *; }
+
+# Manter classes usadas pelo Firebase
+-keep class com.google.firebase.** { *; }
+-keep class com.google.android.gms.** { *; }
+
+-ignorewarnings

@@ -4,6 +4,7 @@ object ReferencesDatabase {
     const val DATABASE_PROJECTS = "database_projects"
     const val PROJECT_LIST = "projectList"
     const val PROJECT = "projects"
+    const val BIOGRAPHY = "biography"
     const val MEETING = "meetings"
 
     const val ID = "id"
