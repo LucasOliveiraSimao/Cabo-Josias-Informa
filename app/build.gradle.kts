@@ -93,6 +93,7 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
 
     implementation(libs.hilt.android)
+    implementation(libs.core.ktx)
     kapt(libs.hilt.compiler)
 
     implementation(platform(libs.firebase.bom))
