@@ -22,6 +22,7 @@ picasso = "2.8"
 
 googleGmsGoogleServices = "4.4.2"
 googleFirebaseCrashlytics = "3.0.1"
+coreKtxVersion = "1.5.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -50,6 +51,7 @@ firebase-database = { group = "com.google.firebase", name = "firebase-database"}
 firebase-storage = { group = "com.google.firebase", name = "firebase-storage"}
 firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics"}
 firebase-messaging = { group = "com.google.firebase", name = "firebase-messaging"}
+core-ktx = { group = "androidx.test", name = "core-ktx", version.ref = "coreKtxVersion" }
 
 
 [plugins]
