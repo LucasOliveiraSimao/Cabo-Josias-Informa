@@ -23,13 +23,31 @@
             android:padding="@dimen/card_padding"
             tools:ignore="UseCompoundDrawables">
 
-            <TextView
-                android:id="@+id/meeting_title"
-                style="@style/CustomTextView"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/default_margin"
-                tools:text="Reunião com a Comunidade do Bairro Vila Nova" />
+                android:layout_marginBottom="@dimen/default_margin">
+
+                <TextView
+                    android:id="@+id/meeting_title"
+                    style="@style/CustomTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/meeting_share"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Reunião com a Comunidade do Bairro Vila Nova" />
+
+                <ImageView
+                    android:id="@+id/meeting_share"
+                    style="@style/ShareImg"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/white" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
                 android:id="@+id/meeting_date"

@@ -1,7 +1,7 @@
 package com.lucassimao.cabojosiasinforma.project_list.presentation.mapper
 
 import com.lucassimao.cabojosiasinforma.project_list.domain.model.ProjectDomainModel
-import com.lucassimao.cabojosiasinforma.project_list.domain.model.ProjectUiModel
+import com.lucassimao.cabojosiasinforma.project_list.presentation.model.ProjectUiModel
 
 fun ProjectDomainModel.toUiModel(): ProjectUiModel {
     return ProjectUiModel(

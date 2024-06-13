@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="CustomCardView" parent="Widget.MaterialComponents.CardView">
         <item name="cardCornerRadius">@dimen/card_corner_radius</item>
         <item name="cardBackgroundColor">@color/on_tertiary</item>
@@ -8,7 +9,7 @@
     <style name="CustomTextView" parent="TextAppearance.AppCompat.Large">
         <item name="android:fontFamily">@font/radio_canada_big_medium</item>
         <item name="android:textColor">@color/white</item>
-        <item name="android:gravity">center</item>
+        <item name="android:gravity">start</item>
     </style>
 
     <style name="ProblemDescriptionText">
@@ -43,6 +44,13 @@
 
     <style name="ProjectDescriptionText">
         <item name="android:textSize">@dimen/text_size_description_project_details</item>
+        <item name="android:justificationMode">inter_word</item>
         <item name="android:layout_margin">@dimen/default_margin_project_details</item>
+    </style>
+
+    <style name="ShareImg">
+        <item name="android:layout_width">@dimen/img_size_share_meeting</item>
+        <item name="android:layout_height">@dimen/img_size_share_meeting</item>
+        <item name="android:src">@drawable/ic_share</item>
     </style>
 </resources>

@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import com.lucassimao.cabojosiasinforma.core.callback.UseCaseCallback
 import com.lucassimao.cabojosiasinforma.core.ui.UiState
 import com.lucassimao.cabojosiasinforma.project_list.domain.model.ProjectDomainModel
-import com.lucassimao.cabojosiasinforma.project_list.domain.model.ProjectUiModel
+import com.lucassimao.cabojosiasinforma.project_list.presentation.model.ProjectUiModel
 import com.lucassimao.cabojosiasinforma.project_list.domain.use_case.ProjectDetailsUseCase
 import com.lucassimao.cabojosiasinforma.project_list.presentation.mapper.toUiModel
 import dagger.hilt.android.lifecycle.HiltViewModel
