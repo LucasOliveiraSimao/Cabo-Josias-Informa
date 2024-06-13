@@ -10,11 +10,12 @@ import com.lucassimao.cabojosiasinforma.R
 import com.lucassimao.cabojosiasinforma.core.ui.UiState
 import com.lucassimao.cabojosiasinforma.core.ui.bundleKey
 import com.lucassimao.cabojosiasinforma.core.ui.dismissProgressDialog
+import com.lucassimao.cabojosiasinforma.core.ui.share.shareInfo
 import com.lucassimao.cabojosiasinforma.core.ui.showProgressDialog
 import com.lucassimao.cabojosiasinforma.core.ui.showSnackbar
 import com.lucassimao.cabojosiasinforma.databinding.ProjectDetailsFragmentBinding
 import com.lucassimao.cabojosiasinforma.project_list.data.model.ActionDataModel
-import com.lucassimao.cabojosiasinforma.project_list.domain.model.ProjectUiModel
+import com.lucassimao.cabojosiasinforma.project_list.presentation.model.ProjectUiModel
 import com.lucassimao.cabojosiasinforma.project_list.presentation.view_model.ProjectDetailsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -75,6 +76,10 @@ class ProjectDetailsFragment : BaseFragment<ProjectDetailsFragmentBinding>(
 
         setText(binding.projectDetailsObjectives, R.string.objectives_format, objectivesString)
         setText(binding.projectDetailsActions, R.string.actions_format, actionsString)
+
+        binding.projectShare.setOnClickListener {
+            shareInfo(getString(R.string.share_via), uiState.data)
+        }
     }
 
     private fun setText(view: TextView?, prefixResId: Int, content: String) {

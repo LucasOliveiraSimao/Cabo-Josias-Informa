@@ -16,6 +16,8 @@
     <string name="actions_format">Ações:\n\n%s</string>
     <!--Project List-->
 
+    <string name="text_example">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy</string>
+
     <string name="error_loading_project">Erro ao carregar projeto: %1$s</string>
 
     <!--Notifications-->
@@ -24,5 +26,6 @@
     <string name="warning_this_app_needs_notification_permission">Este aplicativo precisa de permissão de notificação para enviar atualizações.</string>
     <string name="ok">OK</string>
     <string name="no_thanks">Não Obrigado</string>
+    <string name="share_via">Compartilhar via...</string>
     <!--Notifications-->
 </resources>

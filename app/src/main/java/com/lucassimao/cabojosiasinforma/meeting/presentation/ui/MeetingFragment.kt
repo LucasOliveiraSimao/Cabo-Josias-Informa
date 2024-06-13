@@ -6,10 +6,12 @@ import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.lucassimao.cabojosiasinforma.BaseFragment
+import com.lucassimao.cabojosiasinforma.R
 import com.lucassimao.cabojosiasinforma.core.ui.DiffCallbackUtil
 import com.lucassimao.cabojosiasinforma.core.ui.GenericListAdapter
 import com.lucassimao.cabojosiasinforma.core.ui.UiState
 import com.lucassimao.cabojosiasinforma.core.ui.dismissProgressDialog
+import com.lucassimao.cabojosiasinforma.core.ui.share.shareInfo
 import com.lucassimao.cabojosiasinforma.core.ui.showProgressDialog
 import com.lucassimao.cabojosiasinforma.databinding.MeetingFragmentBinding
 import com.lucassimao.cabojosiasinforma.databinding.MeetingListItemBinding
@@ -45,6 +47,12 @@ class MeetingFragment : BaseFragment<MeetingFragmentBinding>(
                 meetingLocation.text = item.location
                 meetingObjective.text = item.objective
                 meetingParticipants.text = item.participants
+                meetingShare.setOnClickListener {
+                    shareInfo(
+                        getString(R.string.share_via),
+                        item
+                    )
+                }
             },
             diffCallback = DiffCallbackUtil()
         )
