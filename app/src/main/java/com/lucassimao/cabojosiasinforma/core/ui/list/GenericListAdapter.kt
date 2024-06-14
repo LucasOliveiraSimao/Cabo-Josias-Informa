@@ -1,4 +1,4 @@
-package com.lucassimao.cabojosiasinforma.core.ui
+package com.lucassimao.cabojosiasinforma.core.ui.list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

@@ -6,7 +6,7 @@ import com.lucassimao.cabojosiasinforma.home.data.model.HomeDataModel
 import com.lucassimao.cabojosiasinforma.home.data.source.HomeDataSource
 import javax.inject.Inject
 
-class HomeFakeRemoteDataSource @Inject constructor() : HomeDataSource {
+class HomeDataSourceImpl @Inject constructor() : HomeDataSource {
     override fun fetchCards(): List<HomeDataModel> {
         return listOf(
             HomeDataModel(
@@ -16,7 +16,7 @@ class HomeFakeRemoteDataSource @Inject constructor() : HomeDataSource {
             ),
             HomeDataModel(
                 icon = R.drawable.ic_projects,
-                title = "Projetos",
+                title = "Propostas",
                 type = Screens.PROJECTS
             ),
             HomeDataModel(
@@ -24,11 +24,6 @@ class HomeFakeRemoteDataSource @Inject constructor() : HomeDataSource {
                 title = "Agenda de Eventos e Reunião",
                 type = Screens.MEETING
             ),
-//            HomeDataModel(
-//                icon = R.drawable.ic_notifications,
-//                title = "Notificações de Problemas",
-//                type = Screens.NOTIFICATIONS
-//            )
         )
     }
 

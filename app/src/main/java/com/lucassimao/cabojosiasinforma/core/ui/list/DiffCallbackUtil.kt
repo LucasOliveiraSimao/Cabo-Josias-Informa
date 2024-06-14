@@ -1,4 +1,4 @@
-package com.lucassimao.cabojosiasinforma.core.ui
+package com.lucassimao.cabojosiasinforma.core.ui.list
 
 import android.annotation.SuppressLint
 import androidx.recyclerview.widget.DiffUtil

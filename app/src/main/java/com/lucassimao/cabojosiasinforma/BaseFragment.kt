@@ -6,10 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
+import com.lucassimao.cabojosiasinforma.core.ui.UiState
 import kotlin.reflect.KClass
 
 @Suppress("UNCHECKED_CAST")
-abstract class BaseFragment<VB : ViewBinding>(private val bindingClass: KClass<VB>) : Fragment() {
+abstract class BaseFragment<VB : ViewBinding, T>(private val bindingClass: KClass<VB>) :
+    Fragment() {
 
     private var _binding: VB? = null
     protected val binding get() = _binding!!
@@ -34,6 +36,8 @@ abstract class BaseFragment<VB : ViewBinding>(private val bindingClass: KClass<V
     }
 
     abstract fun observerUiState()
+    abstract fun handleUiState(uiState: UiState<T>)
+    abstract fun handleSuccessState(successState: UiState.Success<T>)
     abstract fun showErrorMessage(message: String)
 
 }

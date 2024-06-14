@@ -9,11 +9,11 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.lucassimao.cabojosiasinforma.BaseFragment
 import com.lucassimao.cabojosiasinforma.R
-import com.lucassimao.cabojosiasinforma.core.ui.DiffCallbackUtil
-import com.lucassimao.cabojosiasinforma.core.ui.GenericListAdapter
 import com.lucassimao.cabojosiasinforma.core.ui.UiState
 import com.lucassimao.cabojosiasinforma.core.ui.bundleKey
 import com.lucassimao.cabojosiasinforma.core.ui.dismissProgressDialog
+import com.lucassimao.cabojosiasinforma.core.ui.list.DiffCallbackUtil
+import com.lucassimao.cabojosiasinforma.core.ui.list.GenericListAdapter
 import com.lucassimao.cabojosiasinforma.core.ui.showProgressDialog
 import com.lucassimao.cabojosiasinforma.databinding.ProjectListFragmentBinding
 import com.lucassimao.cabojosiasinforma.databinding.ProjectListItemListBinding
@@ -23,14 +23,13 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class ProjectListFragment : BaseFragment<ProjectListFragmentBinding>(
+class ProjectListFragment : BaseFragment<ProjectListFragmentBinding, List<ProjectListDataModel>>(
     ProjectListFragmentBinding::class
 ) {
 
     private val projectListViewModel: ProjectListViewModel by viewModels()
 
     private lateinit var projectListAdapter: GenericListAdapter<ProjectListDataModel, ProjectListItemListBinding>
-
     private var projectList = listOf<ProjectListDataModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -76,7 +75,7 @@ class ProjectListFragment : BaseFragment<ProjectListFragmentBinding>(
         }
     }
 
-    private fun handleUiState(uiState: UiState<List<ProjectListDataModel>>) {
+    override fun handleUiState(uiState: UiState<List<ProjectListDataModel>>) {
         when (uiState) {
             is UiState.Error -> {
                 dismissProgressDialog()
@@ -95,7 +94,7 @@ class ProjectListFragment : BaseFragment<ProjectListFragmentBinding>(
     }
 
 
-    private fun handleSuccessState(successState: UiState.Success<List<ProjectListDataModel>>) {
+    override fun handleSuccessState(successState: UiState.Success<List<ProjectListDataModel>>) {
         projectList = successState.data
         projectListAdapter.submitList(projectList)
         binding.rvProjectsList.adapter = projectListAdapter

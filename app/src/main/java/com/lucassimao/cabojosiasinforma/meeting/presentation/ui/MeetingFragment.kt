@@ -7,10 +7,10 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.lucassimao.cabojosiasinforma.BaseFragment
 import com.lucassimao.cabojosiasinforma.R
-import com.lucassimao.cabojosiasinforma.core.ui.DiffCallbackUtil
-import com.lucassimao.cabojosiasinforma.core.ui.GenericListAdapter
 import com.lucassimao.cabojosiasinforma.core.ui.UiState
 import com.lucassimao.cabojosiasinforma.core.ui.dismissProgressDialog
+import com.lucassimao.cabojosiasinforma.core.ui.list.DiffCallbackUtil
+import com.lucassimao.cabojosiasinforma.core.ui.list.GenericListAdapter
 import com.lucassimao.cabojosiasinforma.core.ui.share.shareInfo
 import com.lucassimao.cabojosiasinforma.core.ui.showProgressDialog
 import com.lucassimao.cabojosiasinforma.databinding.MeetingFragmentBinding
@@ -21,7 +21,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class MeetingFragment : BaseFragment<MeetingFragmentBinding>(
+class MeetingFragment : BaseFragment<MeetingFragmentBinding, List<MeetingDataModel>>(
     MeetingFragmentBinding::class
 ) {
 
@@ -73,7 +73,7 @@ class MeetingFragment : BaseFragment<MeetingFragmentBinding>(
         }
     }
 
-    private fun handleUiState(uiState: UiState<List<MeetingDataModel>>) {
+    override fun handleUiState(uiState: UiState<List<MeetingDataModel>>) {
         when (uiState) {
             is UiState.Error -> {
                 dismissProgressDialog()
@@ -91,7 +91,7 @@ class MeetingFragment : BaseFragment<MeetingFragmentBinding>(
         }
     }
 
-    private fun handleSuccessState(successState: UiState.Success<List<MeetingDataModel>>) {
+    override fun handleSuccessState(successState: UiState.Success<List<MeetingDataModel>>) {
         meetingList = successState.data
         meetingAdapter.submitList(meetingList)
         binding.rvMeetingList.adapter = meetingAdapter

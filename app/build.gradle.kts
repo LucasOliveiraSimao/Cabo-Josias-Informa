@@ -49,6 +49,7 @@ android {
         getByName("debug") {
             initWith(getByName("release"))
             isMinifyEnabled = false
+            resValue ("string", "app_name", "Cabo Josias Informa Versão Debug")
             applicationIdSuffix = ".debug"
             isDebuggable = true
         }
@@ -59,12 +60,14 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            resValue ("string", "app_name", "Cabo Josias Informa Versão Beta")
             applicationIdSuffix = ".beta"
             isDebuggable = true
             signingConfig = signingConfigs.getByName("release")
         }
 
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
