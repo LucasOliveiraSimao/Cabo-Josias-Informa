@@ -2,7 +2,7 @@ package com.lucassimao.cabojosiasinforma.home.di
 
 import com.lucassimao.cabojosiasinforma.home.data.HomeRepositoryImpl
 import com.lucassimao.cabojosiasinforma.home.data.source.HomeDataSource
-import com.lucassimao.cabojosiasinforma.home.data.source.remote.HomeFakeRemoteDataSource
+import com.lucassimao.cabojosiasinforma.home.data.source.remote.HomeDataSourceImpl
 import com.lucassimao.cabojosiasinforma.home.domain.repository.HomeRepository
 import com.lucassimao.cabojosiasinforma.home.domain.use_case.HomeUseCase
 import com.lucassimao.cabojosiasinforma.home.presentation.ui.HomeAdapter
@@ -16,7 +16,7 @@ import dagger.hilt.components.SingletonComponent
 @InstallIn(SingletonComponent::class)
 object HomeModules {
     @Provides
-    fun provideHomeDataSource(): HomeDataSource = HomeFakeRemoteDataSource()
+    fun provideHomeDataSource(): HomeDataSource = HomeDataSourceImpl()
 
     @Provides
     fun provideHomeRepository(dataSource: HomeDataSource): HomeRepository =

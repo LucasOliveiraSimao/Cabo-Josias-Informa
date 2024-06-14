@@ -3,9 +3,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="on_primary">#0d2f5f</color>
-    <color name="on_primary_container">#d7e2ff</color>
-    <color name="on_secondary">#f7bb70</color>
     <color name="on_tertiary">#00363d</color>
-    <color name="on_tertiary_container">#9eeffd</color>
 </resources>

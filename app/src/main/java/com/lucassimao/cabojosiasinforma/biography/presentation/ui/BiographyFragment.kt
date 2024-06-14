@@ -18,7 +18,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class BiographyFragment : BaseFragment<BiographyFragmentBinding>(
+class BiographyFragment : BaseFragment<BiographyFragmentBinding, BiographyDataModel>(
     BiographyFragmentBinding::class
 ) {
 
@@ -42,7 +42,7 @@ class BiographyFragment : BaseFragment<BiographyFragmentBinding>(
         }
     }
 
-    private fun handleUiState(uiState: UiState<BiographyDataModel>) {
+    override fun handleUiState(uiState: UiState<BiographyDataModel>) {
         when (uiState) {
             is UiState.Error -> {
                 dismissProgressDialog()
@@ -60,7 +60,7 @@ class BiographyFragment : BaseFragment<BiographyFragmentBinding>(
         }
     }
 
-    private fun handleSuccessState(uiState: UiState.Success<BiographyDataModel>) {
+    override fun handleSuccessState(uiState: UiState.Success<BiographyDataModel>) {
         val biography = uiState.data
         loadImage(
             biography.urlImg,

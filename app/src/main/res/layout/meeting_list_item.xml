@@ -30,9 +30,7 @@
 
                 <TextView
                     android:id="@+id/meeting_title"
-                    style="@style/CustomTextView"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    style="@style/MeetingTextView"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/meeting_share"
                     app:layout_constraintStart_toStartOf="parent"
@@ -42,6 +40,7 @@
                 <ImageView
                     android:id="@+id/meeting_share"
                     style="@style/ShareImg"
+                    android:importantForAccessibility="no"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"

@@ -12,7 +12,7 @@ import com.lucassimao.cabojosiasinforma.core.ui.bundleKey
 import com.lucassimao.cabojosiasinforma.core.ui.dismissProgressDialog
 import com.lucassimao.cabojosiasinforma.core.ui.share.shareInfo
 import com.lucassimao.cabojosiasinforma.core.ui.showProgressDialog
-import com.lucassimao.cabojosiasinforma.core.ui.showSnackbar
+import com.lucassimao.cabojosiasinforma.core.ui.showToast
 import com.lucassimao.cabojosiasinforma.databinding.ProjectDetailsFragmentBinding
 import com.lucassimao.cabojosiasinforma.project_list.data.model.ActionDataModel
 import com.lucassimao.cabojosiasinforma.project_list.presentation.model.ProjectUiModel
@@ -21,7 +21,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class ProjectDetailsFragment : BaseFragment<ProjectDetailsFragmentBinding>(
+class ProjectDetailsFragment : BaseFragment<ProjectDetailsFragmentBinding, ProjectUiModel>(
     ProjectDetailsFragmentBinding::class
 ) {
 
@@ -48,7 +48,7 @@ class ProjectDetailsFragment : BaseFragment<ProjectDetailsFragmentBinding>(
         }
     }
 
-    private fun handleUiState(uiState: UiState<ProjectUiModel>) {
+    override fun handleUiState(uiState: UiState<ProjectUiModel>) {
         when (uiState) {
             is UiState.Error -> {
                 dismissProgressDialog()
@@ -66,7 +66,7 @@ class ProjectDetailsFragment : BaseFragment<ProjectDetailsFragmentBinding>(
         }
     }
 
-    private fun handleSuccessState(uiState: UiState.Success<ProjectUiModel>) {
+    override fun handleSuccessState(uiState: UiState.Success<ProjectUiModel>) {
 
         binding.projectDetailsTitle.text = uiState.data.title
         binding.projectDetailsDescription.text = uiState.data.description
@@ -97,11 +97,6 @@ class ProjectDetailsFragment : BaseFragment<ProjectDetailsFragmentBinding>(
 
 
     override fun showErrorMessage(message: String) {
-        showSnackbar(
-            view = requireView(),
-            context = requireContext(),
-            messageResId = R.string.error_loading_project,
-            message
-        )
+        showToast(requireContext(), "Erro ao carregar projeto: $message")
     }
 }
