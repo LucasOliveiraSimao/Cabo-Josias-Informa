@@ -187,11 +187,15 @@ jobs:
           distribution: 'temurin'
           cache: 'gradle'
 
+      - name: Calculate versionCode
+        id: version_code
+        run: echo "versionCode=$((8 + ${{ github.run_number }}))" >> $GITHUB_ENV
+
       - name: Version Bump
         uses: chkfung/android-version-actions@v1.2.1
         with:
           gradlePath: app/build.gradle.kts
-          versionCode: ${{ github.run_number }}
+          versionCode: ${{ env.versionCode }}
 
       - name: Load Google Service file
         env:
