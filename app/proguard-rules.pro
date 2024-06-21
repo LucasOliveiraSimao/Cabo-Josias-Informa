@@ -31,3 +31,12 @@
 -keep class com.google.android.gms.** { *; }
 
 -ignorewarnings
+
+# Preserve ViewBinding classes
+-keep class **ViewBinding { *; }
+
+# Preserve specific inflate methods
+-keepclassmembers class * {
+    public static ** inflate(android.view.LayoutInflater, android.view.ViewGroup, boolean);
+    public static ** inflate(android.view.LayoutInflater);
+}

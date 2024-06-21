@@ -22,7 +22,7 @@ android {
         applicationId = "com.lucassimao.cabojosiasinforma"
         minSdk = 26
         targetSdk = 34
-        versionCode = 1
+        versionCode = 8
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -39,7 +39,7 @@ android {
 
     buildTypes {
         getByName("release") {
-            isMinifyEnabled = true
+            isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -53,15 +53,15 @@ android {
             applicationIdSuffix = ".debug"
             isDebuggable = true
         }
-        create("beta") {
+        create("alpha") {
             initWith(getByName("release"))
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            resValue ("string", "app_name", "Cabo Josias Informa Versão Beta")
-            applicationIdSuffix = ".beta"
+            resValue ("string", "app_name", "Cabo Josias Informa Versão Alpha")
+            applicationIdSuffix = ".alpha"
             isDebuggable = true
             signingConfig = signingConfigs.getByName("release")
         }

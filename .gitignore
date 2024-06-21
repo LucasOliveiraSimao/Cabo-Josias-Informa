@@ -96,6 +96,7 @@ obj/
 .idea/deploymentTargetSelector.xml
 .idea/kotlinc.xml
 .idea/render.experimental.xml
+.idea/other.xml
 
 
 # OS-specific files

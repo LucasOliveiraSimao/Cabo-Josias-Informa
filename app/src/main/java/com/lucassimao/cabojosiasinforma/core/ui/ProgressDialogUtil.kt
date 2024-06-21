@@ -7,14 +7,22 @@ import androidx.fragment.app.Fragment
 
 var progressDialog: ProgressDialog? = null
 fun Fragment.showProgressDialog() {
-    if (progressDialog == null) {
-        progressDialog = ProgressDialog(context)
-        progressDialog?.setMessage("Carregando...")
-        progressDialog?.setCancelable(false)
+    if (context == null || !isAdded || isRemoving) {
+        return
     }
-    progressDialog?.show()
+
+    if (progressDialog == null) {
+        progressDialog = ProgressDialog(requireContext()).apply {
+            setMessage("Carregando...")
+            setCancelable(true)
+        }
+    }
+    if (progressDialog?.isShowing == false) {
+        progressDialog?.show()
+    }
 }
 
 fun dismissProgressDialog() {
     progressDialog?.dismiss()
+    progressDialog = null
 }

@@ -11,8 +11,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
-import com.google.firebase.database.ktx.database
-import com.google.firebase.ktx.Firebase
 import com.lucassimao.cabojosiasinforma.notification.NotificationHelper
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -21,13 +19,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        initializeFirebase()
         navigateToFragmentIfNeeded(intent)
         askNotificationPermissionIfNeeded()
-    }
-
-    private fun initializeFirebase() {
-        Firebase.database.setPersistenceEnabled(true)
     }
 
     private val requestPermissionLauncher = registerForActivityResult(
