@@ -39,4 +39,5 @@ abstract class BaseFragment<VB : ViewBinding, T>(private val bindingClass: KClas
     abstract fun handleUiState(uiState: UiState<T>)
     abstract fun handleSuccessState(successState: UiState.Success<T>)
     abstract fun showErrorMessage(message: String)
+
 }
