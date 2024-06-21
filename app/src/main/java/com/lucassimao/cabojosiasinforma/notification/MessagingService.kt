@@ -10,10 +10,6 @@ class MessagingService @Inject constructor(): FirebaseMessagingService() {
     @Inject
     lateinit var notificationHelper: NotificationHelper
 
-    override fun onNewToken(token: String) {
-        super.onNewToken(token)
-    }
-
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
         remoteMessage.notification?.let {
             notificationHelper.showNotification(

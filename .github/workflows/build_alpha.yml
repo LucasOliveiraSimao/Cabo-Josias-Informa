@@ -3,7 +3,7 @@ name: Android Build
 on:
   pull_request:
     branches:
-      - beta
+      - alpha
 
 jobs:
   setup:
@@ -169,8 +169,8 @@ jobs:
       - name: Upload Android App Bundle
         uses: actions/upload-artifact@v4
         with:
-          name: Artifact Version Beta
-          path: app/build/outputs/bundle/beta/app-beta.aab
+          name: Artifact Version Alpha
+          path: app/build/outputs/bundle/beta/app-alpha.aab
 
       - name: Clean up
         run: rm app/keystore.jks
