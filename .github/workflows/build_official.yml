@@ -63,7 +63,7 @@ jobs:
         env:
           STORE_FILE_BASE64: ${{ secrets.STORE_FILE_BASE64 }}
         run: |
-          echo "$STORE_FILE_BASE64" | base64 --decode > app/keystore.jks
+          echo "$STORE_FILE_BASE64" | base64 --decode >  app/key_app_cabo_josias_informa.jks
 
       - name: Load keystore properties
         run: |
