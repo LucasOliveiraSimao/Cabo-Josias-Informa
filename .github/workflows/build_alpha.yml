@@ -165,7 +165,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Artifact Version Alpha
-          path: app/build/outputs/bundle/beta/app-alpha.aab
+          path: app/build/outputs/bundle/alpha/app-alpha.aab
 
       - name: Clean up
         run: rm app/keystore.jks
