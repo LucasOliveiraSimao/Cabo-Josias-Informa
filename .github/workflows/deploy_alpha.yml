@@ -91,6 +91,13 @@ jobs:
           echo "keyAlias=${{ secrets.KEY_ALIAS }}" >> app/keystore.properties
           echo "keyPassword=${{ secrets.KEY_PASSWORD }}" >> app/keystore.properties
 
+      - name: Build Android Bundle Alpha
+        run: ./gradlew bundleAlpha
+        env:
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+          STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
+      
       - name: Sign Alpha
         uses: r0adkll/sign-android-release@v1
         with:
