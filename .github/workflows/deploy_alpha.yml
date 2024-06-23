@@ -2,7 +2,7 @@ name: Android Deploy Alpha
 
 on:
   workflow_run:
-    workflows: ["Android Deploy Alpha"]
+    workflows: ["Android Build Alpha"]
     types:
       - completed
 
