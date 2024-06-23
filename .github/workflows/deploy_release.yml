@@ -1,10 +1,9 @@
-name: Android Deploy Alpha
+name: Android Deploy Release
 
 on:
-  workflow_run:
-    workflows: ["Android Build Release"]
-    types:
-      - completed
+  pull_request:
+    branches:
+      - main
 
 jobs:
   setup:
@@ -38,14 +37,14 @@ jobs:
     name: Distribute on Google Play Store
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4.1.1
 
-      - name: Setup JDK 17
+      - uses: actions/checkout@v4.1.1
+
+      - name: Set Up JDK 17
         uses: actions/setup-java@v4.0.0
         with:
-          java-version: '17'
           distribution: 'temurin'
+          java-version: 17
           cache: 'gradle'
 
       - name: Calculate Version Code
@@ -62,12 +61,11 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.gradle/caches
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
         env:
-          JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.9-9/x64
-          JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.9-9/x64
+          JAVA_HOME: ${{ github.workspace }}/jdk
           ANDROID_HOME: /usr/local/lib/android/sdk
           ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
 
@@ -90,14 +88,14 @@ jobs:
           echo "keyAlias=${{ secrets.KEY_ALIAS }}" >> app/keystore.properties
           echo "keyPassword=${{ secrets.KEY_PASSWORD }}" >> app/keystore.properties
 
-      - name: Sign Alpha
+      - name: Sign Release
         uses: r0adkll/sign-android-release@v1
         with:
-          releaseDirectory: app/build/outputs/bundle/alpha
-          signingKeyBase64: ${{ secrets.STORE_FILE_BASE64 }}
-          keyStorePassword: ${{ secrets.STORE_PASSWORD }}
-          alias: ${{ secrets.KEY_ALIAS }}
-          keyPassword: ${{ secrets.KEY_PASSWORD }}
+          releaseDirectory: app/build/outputs/bundle/release
+          signingKeyBase64: ${{ secrets.KEYSTORE }}
+          keyStorePassword: ${{ secrets.KEYSTORE_PASSWORD }}
+          alias: ${{ secrets.APP_NAME_KEY }}
+          keyPassword: ${{ secrets.APP_NAME_KEY_PASSWORD }}
 
       - name: Setup Authorization With Google Play Store
         run: echo '${{ secrets.GOOGLE_PLAY_API_AUTH }}' > service_account.json
@@ -106,7 +104,7 @@ jobs:
         uses: r0adkll/upload-google-play@v1.1.1
         with:
           serviceAccountJson: service_account.json
-          packageName: com.lucassimao.cabojosiasinforma.alpha
-          releaseFiles: app/build/outputs/bundle/release/app-alpha.aab
-          track: alpha
+          packageName: com.lucassimao.cabojosiasinforma
+          releaseFiles: app/build/outputs/bundle/release/app-release.aab
+          track: production
           status: 'completed'
