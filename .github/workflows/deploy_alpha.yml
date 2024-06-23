@@ -117,7 +117,7 @@ jobs:
         uses: r0adkll/upload-google-play@v1.1.1
         with:
           serviceAccountJson: service_account.json
-          packageName: com.lucassimao.cabojosiasinforma.alpha
-          releaseFiles: app/build/outputs/bundle/release/app-alpha.aab
+          packageName: com.lucassimao.cabojosiasinforma
+          releaseFiles: app/build/outputs/bundle/release/app-release.aab
           track: alpha
           status: 'completed'
