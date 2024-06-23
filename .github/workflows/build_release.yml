@@ -145,7 +145,7 @@ jobs:
 
       - name: Load Keystore Properties
         run: |
-          echo "storeFile=keystore.jks" >> app/keystore.properties
+          echo "storeFile=key_app_cabo_josias_informa.jks" >> app/keystore.properties
           echo "$STORE_FILE_BASE64" | base64 --decode > app/keystore.jks
           echo "storePassword=${{ secrets.STORE_PASSWORD }}" >> app/keystore.properties
           echo "keyAlias=${{ secrets.KEY_ALIAS }}" >> app/keystore.properties
