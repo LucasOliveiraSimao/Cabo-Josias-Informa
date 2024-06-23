@@ -95,13 +95,13 @@ jobs:
         run: chmod +x gradlew
       
       - name: Build Android Bundle Alpha
-        run: ./gradlew bundleAlpha
+        run: ./gradlew bundle
         env:
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
           STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
       
-      - name: Sign Alpha
+      - name: Sign Release
         uses: r0adkll/sign-android-release@v1
         with:
           releaseDirectory: app/build/outputs/bundle/release
