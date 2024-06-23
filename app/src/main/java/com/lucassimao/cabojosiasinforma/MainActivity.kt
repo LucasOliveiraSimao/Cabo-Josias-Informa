@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
     private fun askNotificationPermissionIfNeeded() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             when {
