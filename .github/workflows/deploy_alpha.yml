@@ -104,7 +104,7 @@ jobs:
       - name: Sign Release
         uses: r0adkll/sign-android-release@v1
         with:
-          releaseDirectory: app/build/outputs/bundle/release
+          releaseDirectory: app/build/outputs/bundle/alpha
           signingKeyBase64: ${{ secrets.STORE_FILE_BASE64 }}
           keyStorePassword: ${{ secrets.STORE_PASSWORD }}
           alias: ${{ secrets.KEY_ALIAS }}
@@ -117,7 +117,7 @@ jobs:
         uses: r0adkll/upload-google-play@v1.1.1
         with:
           serviceAccountJson: service_account.json
-          packageName: com.lucassimao.cabojosiasinforma
-          releaseFiles: app/build/outputs/bundle/release/app-release.aab
+          packageName: com.lucassimao.cabojosiasinforma.alpha
+          releaseFiles: app/build/outputs/bundle/release/app-alpha.aab
           track: alpha
           status: 'completed'
