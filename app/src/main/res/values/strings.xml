@@ -1,15 +1,29 @@
 <resources>
     <string name="app_name">Cabo Josias Informa</string>
-    <string name="problem_description_prompt">Faça uma descrição do problema para que possamos verificar</string>
-    <string name="hint_location">Local</string>
-    <string name="hint_description">Descrição</string>
-    <string name="image1">Imagem 1</string>
-    <string name="image2">Imagem 2</string>
-    <string name="image3">Imagem 3</string>
-    <string name="send">Enviar</string>
-    <string name="choose_image">Escolher Imagem:</string>
-    <string name="camera_option">Câmera</string>
-    <string name="gallery_option">Galeria</string>
-    <string name="camera_permission_denied">Permissão para usar a câmera negada</string>
-    <string name="storage_permission_denied">Permissão para acessar o armazenamento negada</string>
+    <string name="app_name_beta">Cabo Josias Informa Beta</string>
+    <string name="objectives_format">Objetivos:\n\n%s</string>
+    <string name="actions_format">Ações:\n\n%s</string>
+    <!--Project List-->
+
+    <string name="text_example">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy</string>
+
+    <string name="error_loading_project">Erro ao carregar projeto: %1$s</string>
+
+    <!--Notifications-->
+    <string name="warning_notifications_permission_denied">Permissão de notificações negada. O aplicativo não mostrará notificações.</string>
+    <string name="warning_notification_permission_needed">Permissão de notificação necessária</string>
+    <string name="warning_this_app_needs_notification_permission">Este aplicativo precisa de permissão de notificação para enviar atualizações.</string>
+    <string name="ok">OK</string>
+    <string name="no_thanks">Não Obrigado</string>
+    <!--Notifications-->
+
+    <!--Share-->
+    <string name="share_via">Compartilhar via&#8230;</string>
+    <!--Share-->
+
+    <!--AlertDialog-->
+    <string name="important_warning">Aviso Importante</string>
+    <string name="membership_notice">Este aplicativo não possui afiliação ou autorização governamental e não representa uma entidade governamental. Para informações oficiais sobre o processo eleitoral, visite o site do Tribunal Superior Eleitoral (TSE) em https://www.tse.jus.br/."</string>
+    <string name="warning">Este aplicativo é destinado à divulgação da campanha do candidato Josias Viana a vereador. Através deste app, você pode conhecer as propostas, acompanhar eventos e receber notícias atualizadas sobre a campanha.\n\nAviso Importante: Este aplicativo não possui afiliação ou autorização governamental e não representa uma entidade governamental. Para informações oficiais sobre o processo eleitoral, visite o site do Tribunal Superior Eleitoral (TSE) em http://www.tse.jus.br.</string>
+    <!--AlertDialog-->
 </resources>

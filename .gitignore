@@ -20,6 +20,7 @@ out/
 .gradle
 .gradle/
 build/
+app/keystore.properties
 
 # Signing files
 .signing/
@@ -93,7 +94,9 @@ obj/
 .idea/navEditor.xml
 .idea/deploymentTargetDropDown.xml
 .idea/deploymentTargetSelector.xml
+.idea/kotlinc.xml
 .idea/render.experimental.xml
+.idea/other.xml
 
 
 # OS-specific files

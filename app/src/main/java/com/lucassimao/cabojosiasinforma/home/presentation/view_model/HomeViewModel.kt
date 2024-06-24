@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val useCase: HomeUseCase
+    private val homeUseCase: HomeUseCase
 ) : ViewModel() {
-    fun fetchHomeCards() = useCase.invoke()
+    fun fetchHomeCards() = homeUseCase.invoke()
 }

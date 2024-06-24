@@ -14,19 +14,15 @@
 
         <ImageView
             android:id="@+id/biography_image"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/img_test"
+            style="@style/ImageBiography"
             tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/biography_description"
-            style="@style/CustomTextView"
+            style="@style/CustomTextViewBiography"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textColor="@color/black"
-            tools:text="Josias Viana é um dedicado cabo da Polícia Militar, que tem servido com honra e integridade a comunidade de Itacoatiara por mais de 15 anos. Natural da própria cidade, Josias conhece de perto as necessidades e desafios enfrentados pelos seus conterrâneos, o que o motivou a se candidatar ao cargo de vereador, com o objetivo de promover mudanças significativas e melhorar a qualidade de vida de todos os moradores." />
+            tools:text="@string/text_example" />
 
     </LinearLayout>
 
