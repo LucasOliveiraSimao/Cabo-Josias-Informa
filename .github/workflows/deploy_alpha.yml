@@ -119,6 +119,6 @@ jobs:
         with:
           serviceAccountJson: service_account.json
           packageName: com.lucassimao.cabojosiasinforma.alpha
-          releaseFiles: app/build/outputs/bundle/release/app-alpha.aab
+          releaseFiles: app/build/outputs/bundle/alpha/app-alpha.aab
           track: alpha
           status: 'completed'
