@@ -38,6 +38,7 @@ jobs:
     name: Distribute on Google Play Store
     runs-on: ubuntu-latest
     needs: [setup]
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4.1.1
