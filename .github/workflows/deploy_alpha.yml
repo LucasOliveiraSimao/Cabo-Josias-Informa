@@ -95,14 +95,14 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       
-      - name: Build Android Bundle Alpha
+      - name: Build Android Bundle
         run: ./gradlew bundle
         env:
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
           STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
       
-      - name: Sign Release
+      - name: Sign App
         uses: r0adkll/sign-android-release@v1
         with:
           releaseDirectory: app/build/outputs/bundle/alpha
@@ -114,11 +114,11 @@ jobs:
       - name: Setup Authorization With Google Play Store
         run: echo '${{ secrets.GOOGLE_PLAY_API_AUTH }}' > service_account.json
 
-      - name: Deploy
+      - name: Deploy App
         uses: r0adkll/upload-google-play@v1.1.1
         with:
           serviceAccountJson: service_account.json
-          packageName: com.lucassimao.cabojosiasinforma.alpha
-          releaseFiles: app/build/outputs/bundle/alpha/app-alpha.aab
+          packageName: com.lucassimao.cabojosiasinforma
+          releaseFiles: app/build/outputs/bundle/release/app-release.aab
           track: alpha
           status: 'completed'
