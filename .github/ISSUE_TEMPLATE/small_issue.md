@@ -1,5 +1,5 @@
 ---
-name: Task
+name: Tarefa
 about: Uma pequena tarefa que provavelmente faz parte de uma Versão.
 ---
 
