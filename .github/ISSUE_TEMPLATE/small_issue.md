@@ -1,23 +1,19 @@
 ---
 name: Task
-about: A small task that is, most likely, part of an Epic.
+about: Uma pequena tarefa que provavelmente faz parte de uma Versão.
 ---
 
-<!-- Issue title should mirror the Task Title. -->
+## Descrição da tarefa
 
-# Task Title
+## Descrição do Problema
 
-## Task Description
+## Critérios de Aceitação
 
-## Problem Description
+1. [ ] [Critérios de Aceitação 1: Descrição]
+2. [ ] [Critérios de Aceitação 2: Descrição]
 
-## Acceptance Criteria
+## Versão
 
-1. [ ] [Acceptance Criteria 1: Description]
-2. [ ] [Acceptance Criteria 2: Description]
+<!-- O link abaixo deve vincular ao seu pai. -->
 
-## Epic Parent
-
-<!-- The link below should link to its Epic Parent. -->
-
-[Epic Problem Title](https://github.com/LucasOliveiraSimao/Cabo-Josias-Informa/issues/7)
+[Título da Versão](https://github.com/LucasOliveiraSimao/Cabo-Josias-Informa/issues/7)
