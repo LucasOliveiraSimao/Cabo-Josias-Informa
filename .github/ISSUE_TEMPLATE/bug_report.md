@@ -1,25 +1,21 @@
 ---
-name: Bug report
-about: Create a report to help us improve
+name: Relatório de erro
+about: Crie um relatório para nos ajudar a melhorar
 ---
 
-<!-- Please search existing issues to avoid creating duplicates. -->
+<!-- Pesquise os problemas existentes para evitar a criação de duplicatas. -->
 
-# Bug Report
+## Descrição
 
-Bug: Not so Awesome Bug Title
+Informações sobre o bug vão aqui.
 
-## Description
+### Passos para reproduzir
 
-Info about the bug goes here.
+1. Passo 1
+2. Passo 2
 
-### Steps to Reproduce
+### Resultado esperado
 
-1. Step 1
-2. Step 2
+O resultado esperado era...
 
-### Expected Result
-
-The expected result was...
-
-You may write the expected result or add a screenshot.
+Você pode escrever o resultado esperado ou adicionar uma captura de tela.
