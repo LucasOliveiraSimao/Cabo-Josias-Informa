@@ -22,8 +22,8 @@ android {
         applicationId = "com.lucassimao.cabojosiasinforma"
         minSdk = 26
         targetSdk = 34
-        versionCode = 8
-        versionName = "1.0"
+        versionCode = 24
+        versionName = "1.1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -35,10 +35,16 @@ android {
             storeFile = file(keystoreProperties["storeFile"] as String)
             storePassword = keystoreProperties["storePassword"] as String
         }
+        create("alpha") {
+            keyAlias = keystoreProperties["keyAlias"] as String
+            keyPassword = keystoreProperties["keyPassword"] as String
+            storeFile = file(keystoreProperties["storeFile"] as String)
+            storePassword = keystoreProperties["storePassword"] as String
+        }
     }
 
     buildTypes {
-        getByName("release") {
+        release {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -46,7 +52,7 @@ android {
             )
             signingConfig = signingConfigs.getByName("release")
         }
-        getByName("debug") {
+        debug {
             initWith(getByName("release"))
             isMinifyEnabled = false
             resValue ("string", "app_name", "Cabo Josias Informa Versão Debug")
@@ -63,7 +69,7 @@ android {
             resValue ("string", "app_name", "Cabo Josias Informa Versão Alpha")
             applicationIdSuffix = ".alpha"
             isDebuggable = true
-            signingConfig = signingConfigs.getByName("release")
+            signingConfig = signingConfigs.getByName("alpha")
         }
 
     }
