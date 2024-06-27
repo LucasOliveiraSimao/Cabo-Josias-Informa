@@ -25,5 +25,6 @@
     <string name="important_warning">Aviso Importante</string>
     <string name="membership_notice">Este aplicativo não possui afiliação ou autorização governamental e não representa uma entidade governamental. Para informações oficiais sobre o processo eleitoral, visite o site do Tribunal Superior Eleitoral (TSE) em https://www.tse.jus.br/."</string>
     <string name="warning">Este aplicativo é destinado à divulgação da campanha do candidato Josias Viana a vereador. Através deste app, você pode conhecer as propostas, acompanhar eventos e receber notícias atualizadas sobre a campanha.\n\nAviso Importante: Este aplicativo não possui afiliação ou autorização governamental e não representa uma entidade governamental. Para informações oficiais sobre o processo eleitoral, visite o site do Tribunal Superior Eleitoral (TSE) em http://www.tse.jus.br.</string>
+    <string name="loading">Carregando...</string>
     <!--AlertDialog-->
 </resources>

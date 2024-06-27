@@ -1,28 +1,32 @@
-@file:Suppress("DEPRECATION")
-
 package com.lucassimao.cabojosiasinforma.core.ui
 
-import android.app.ProgressDialog
+import android.app.AlertDialog
 import androidx.fragment.app.Fragment
+import com.lucassimao.cabojosiasinforma.R
 
-var progressDialog: ProgressDialog? = null
+private var customProgressDialog: AlertDialog? = null
+
 fun Fragment.showProgressDialog() {
     if (context == null || !isAdded || isRemoving) {
         return
     }
 
-    if (progressDialog == null) {
-        progressDialog = ProgressDialog(requireContext()).apply {
-            setMessage("Carregando...")
-            setCancelable(true)
-        }
+    if (customProgressDialog == null) {
+        val builder = AlertDialog.Builder(requireContext())
+        val inflater = layoutInflater
+        val dialogView = inflater.inflate(R.layout.custom_progress_dialog, null)
+        builder.setView(dialogView)
+        builder.setCancelable(true)
+
+        customProgressDialog = builder.create()
     }
-    if (progressDialog?.isShowing == false) {
-        progressDialog?.show()
+
+    if (customProgressDialog?.isShowing == false) {
+        customProgressDialog?.show()
     }
 }
 
 fun dismissProgressDialog() {
-    progressDialog?.dismiss()
-    progressDialog = null
+    customProgressDialog?.dismiss()
+    customProgressDialog = null
 }
